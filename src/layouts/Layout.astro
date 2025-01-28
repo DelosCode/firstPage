@@ -1,5 +1,6 @@
 ---
 
+import Nav from '../components/Nav.astro';
 import '../styles/tailwind.css';
 
 ---
@@ -9,10 +10,10 @@ import '../styles/tailwind.css';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<!-- <link rel="stylesheet" href="../styles/tailwind.css"> -->
 		<title>DelosCode</title>
 	</head>
 	<body>
+		<Nav></Nav>
 		<slot />
 	</body>
 </html>

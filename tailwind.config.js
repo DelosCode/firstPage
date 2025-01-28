@@ -5,7 +5,11 @@ export default {
     './public/**/*.html', // Opcional: archivos HTML estáticos,
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'bg-nav': "#16484B"
+      }
+    },
   },
   plugins: [],
 }
