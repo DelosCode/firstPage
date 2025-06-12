@@ -1,24 +1,56 @@
 .container__header {
     z-index: -10;
-    background-color: red;
-    height: 100vh;
+    background-color: #BFBFBF;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .text__container__pretitulo{
     font-weight: bold;
-    color: #3a9094;
+    color: #16484B;
     padding: 0 5px;
 }
 .text__container__titulo{
     color: #000000;
     font-size: 4em;
-    line-height:1;
+    line-height:1.2;
     padding: 0 20px;
 }
 .text__container__line {
     margin-left: 5%;
-    border-left: solid black 5px;
+    border-left: solid #16484B 5px;
 }
 .text__container__parrafo {
     font-size: 20px;
     width: 50vw; /*revisar por el tema del rd*/
+    padding: 0 5px;
+}
+
+/*organizacion btn*/
+.organizacion__btn {
+    display: flex;
+    align-items: center;
+    background-color: #16484B;
+    border-radius: 5px;
+}
+.organizacion__circulo__btn {
+    width: 0.9em;
+    height: 0.9em;
+    background-color: #BFBFBF;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.organizacion__txt_btn {
+    font-size: 1.2em;
+    padding: 2px 8px;
+    color: #BFBFBF;
+}
+/*organizacion section*/
+
+.text__container__contactos {
+    padding: 1em 0 1.5em 1em;
+    display: flex;
+    align-items: center;
+    gap: 2em;
 }
