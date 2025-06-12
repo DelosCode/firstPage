@@ -1,0 +1,10 @@
+.footer__cotainer {
+    background-color: #f2f2f2;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+}
+.footer__cotainer > p {
+    margin: 20px;
+}

@@ -1,8 +1,8 @@
 ---
-import '../styles/components/nav.css';
 import Nav from '../components/Nav.astro';
 import '../styles/tailwind.css';
 
+import Footer from '../components/Footer.astro'
 ---
 <!doctype html>
 <html lang="es">
@@ -13,14 +13,16 @@ import '../styles/tailwind.css';
 		<title>DelosCode</title>
 	</head>
 	<body>
-		<Nav></Nav>
-		<slot />
+		<main>
+			<Nav></Nav>
+			<slot />
+		</main>
+		<Footer></Footer>
 	</body>
 </html>
 
 <style>
-	html,
-	body {
+	main {
 		margin: 0;
 		padding: 0 0.9em;
 		width: 100%;
