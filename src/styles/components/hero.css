@@ -1,0 +1,24 @@
+.container__header {
+    z-index: -10;
+    background-color: red;
+    height: 100vh;
+}
+.text__container__pretitulo{
+    font-weight: bold;
+    color: #3a9094;
+    padding: 0 5px;
+}
+.text__container__titulo{
+    color: #000000;
+    font-size: 4em;
+    line-height:1;
+    padding: 0 20px;
+}
+.text__container__line {
+    margin-left: 5%;
+    border-left: solid black 5px;
+}
+.text__container__parrafo {
+    font-size: 20px;
+    width: 50vw; /*revisar por el tema del rd*/
+}

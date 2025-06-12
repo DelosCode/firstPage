@@ -3,6 +3,8 @@ import Nav from '../components/Nav.astro';
 import '../styles/tailwind.css';
 
 import Footer from '../components/Footer.astro'
+
+import Hero from '../components/Hero.astro';
 ---
 <!doctype html>
 <html lang="es">
@@ -15,7 +17,8 @@ import Footer from '../components/Footer.astro'
 	<body>
 		<main>
 			<Nav></Nav>
-			<slot />
+			<!-- <slot /> -->
+			<Hero></Hero>
 		</main>
 		<Footer></Footer>
 	</body>
