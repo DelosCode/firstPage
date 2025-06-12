@@ -5,6 +5,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
+    /* flex-direction: column; */
+    overflow:hidden;
 }
 .text__container__pretitulo{
     font-weight: bold;
@@ -53,4 +57,29 @@
     display: flex;
     align-items: center;
     gap: 2em;
+}
+
+/* corte de seccion y logo*/
+
+.corte__header {
+    width: 200%;
+    height: 500px;
+    background-color: rgba(22, 72, 75, 0.7);
+
+    transform: rotate(-20deg);
+    z-index: -20;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+} /* prepara los breakpoints*/
+
+.mono__header {
+    height: 100%;
+    width: 50%;
+
+    background-image: url("../../../public/logobg.png");
+    background-size: 50%;
+    background-position: right;
+    background-repeat: no-repeat;
 }
