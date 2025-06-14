@@ -10,22 +10,32 @@
     /* flex-direction: column; */
     overflow:hidden;
 }
-.text__container__pretitulo{
+.section__header {
+    display: inline-block;
+    width: 100%;
+    padding: 200px 0;
+    margin: 5vw;
+
+    background-image: url("../../../public/logobg.png");
+    background-position: right;
+    background-repeat: no-repeat;
+}
+.section__header__pretitulo{
     font-weight: bold;
     color: #16484B;
     padding: 0 5px;
 }
-.text__container__titulo{
+.section__header__titulo{
     color: #000000;
     font-size: 4em;
     line-height:1.2;
     padding: 0 20px;
 }
-.text__container__line {
+.section__header__line {
     margin-left: 5%;
     border-left: solid #16484B 5px;
 }
-.text__container__parrafo {
+.section__header__parrafo {
     font-size: 20px;
     width: 50vw; /*revisar por el tema del rd*/
     padding: 0 5px;
@@ -52,19 +62,20 @@
 }
 /*organizacion section*/
 
-.text__container__contactos {
+.section__header__contactos {
     padding: 1em 0 1.5em 1em;
     display: flex;
     align-items: center;
     gap: 2em;
+    /* background-image: url("../../../public/logobg.png"); */
 }
 
-/* corte de seccion y logo*/
+/* corte de seccion*/
 
 .corte__header {
     width: 200%;
     height: 500px;
-    background-color: rgba(22, 72, 75, 0.7);
+    background-color: #496c6e;
 
     transform: rotate(-20deg);
     z-index: -20;
@@ -72,14 +83,4 @@
     position: absolute;
     bottom: 0;
     left: 0;
-} /* prepara los breakpoints*/
-
-.mono__header {
-    height: 100%;
-    width: 50%;
-
-    background-image: url("../../../public/logobg.png");
-    background-size: 50%;
-    background-position: right;
-    background-repeat: no-repeat;
 }
