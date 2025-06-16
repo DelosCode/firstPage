@@ -1,0 +1,50 @@
+.article__contribuidores {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 90vh;
+    background-color: #496c6e;
+}
+.contribuidores {
+    background-color: #496c6e;
+    display: flex;
+    justify-content: center;
+}
+
+.container__contribuidores {
+    border-radius: 20px;
+    background-color: #16484B;
+    padding: 0.8em 50px 50px 50px;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+}
+
+.text__contribuidores {
+    font-size: 3em;
+    font-weight: bold;
+    color: #bfbfbf;
+    text-align: center;
+    padding-bottom: 1em;
+
+}
+
+.center__contribuidores {
+    display: flex;
+    gap: 20px;
+}
+
+.center__contribuidores > img {
+    transform: skewX(5deg);
+    border-radius: 5px;
+    width: 200px;
+    border: solid 2px #bfbfbf;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.center__contribuidores > img:hover {
+    opacity: 1;
+    border: solid 2px #496c6e;
+    transform: scale(1.05);
+    z-index: 100;
+    
+    transition: 0.05s;
+}
