@@ -1,7 +1,7 @@
 .container__header {
     z-index: -10;
     background-color: #BFBFBF;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,20 +67,18 @@
     display: flex;
     align-items: center;
     gap: 2em;
-    /* background-image: url("../../../public/logobg.png"); */
 }
 
 /* corte de seccion*/
 
+/* background-color: #496c6e; */
 .corte__header {
-    width: 200%;
-    height: 500px;
-    background-color: #496c6e;
-
-    transform: rotate(-20deg);
-    z-index: -20;
-    
     position: absolute;
+    width: 100vw;
+    height: 70vh;
+    background: #496c6e;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    z-index: -20;
+
     bottom: 0;
-    left: 0;
 }
