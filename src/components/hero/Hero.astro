@@ -1,0 +1,127 @@
+---
+// import './hero.css'; // Removed
+---
+
+<header
+    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950"
+    id="hero"
+>
+    <!-- Background Elements -->
+    <div
+        class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-teal-900/20 to-transparent pointer-events-none hero-bg-element"
+    >
+    </div>
+    <div
+        class="absolute -bottom-32 -left-32 w-96 h-96 bg-teal-600/20 rounded-full blur-3xl pointer-events-none hero-bg-element"
+    >
+    </div>
+
+    <section
+        class="container mx-auto px-4 py-20 relative z-10 grid md:grid-cols-2 gap-12 items-center"
+    >
+        <div class="space-y-6 hero-content">
+            <div class="border-l-4 border-teal-500 pl-4 hero-text-item">
+                <p
+                    class="text-teal-400 font-bold tracking-wider uppercase mb-2"
+                >
+                    desarrollo full-stack
+                </p>
+                <h1
+                    class="text-5xl md:text-7xl font-bold text-white leading-tight"
+                >
+                    DELOS<span class="text-teal-500">CODE</span>
+                </h1>
+            </div>
+
+            <p
+                class="text-slate-300 text-lg md:text-xl max-w-lg leading-relaxed hero-text-item"
+            >
+                Comunidad de estudiantes de la UNPAZ dedicados a aprender, crear
+                y colaborar en proyectos tecnológicos.
+                <br class="hidden md:block" />
+                Juntos construimos soluciones reales.
+            </p>
+
+            <div class="flex items-center gap-6 pt-4 hero-text-item">
+                <a
+                    href="https://github.com/DelosCode"
+                    class="group flex items-center gap-3 bg-teal-600 hover:bg-teal-500 text-white px-6 py-3 rounded-lg transition-all font-medium shadow-lg shadow-teal-900/20"
+                >
+                    <span
+                        class="w-2 h-2 bg-white rounded-full group-hover:scale-125 transition-transform"
+                    ></span>
+                    <span>Organización</span>
+                </a>
+                <address
+                    class="text-slate-400 not-italic hover:text-teal-400 transition-colors"
+                >
+                    saucedog926@gmail.com
+                </address>
+            </div>
+        </div>
+
+        <div class="hidden md:flex justify-center relative hero-image">
+            <!-- Placeholder for image or graphic -->
+            <div class="relative w-full max-w-md aspect-square">
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-teal-500/30 to-slate-500/30 rounded-full blur-2xl animate-pulse"
+                >
+                </div>
+                <img
+                    src="/logobg.png"
+                    alt="DelosCode Logo"
+                    class="relative z-10 w-full h-full object-contain drop-shadow-2xl opacity-90 hover:scale-105 transition-transform duration-500"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Wave Separator -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+            class="relative block w-[calc(100%+1.3px)] h-[70px] rotate-180"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+        >
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="fill-slate-900"></path>
+        </svg>
+    </div>
+</header>
+
+<script>
+    import { gsap } from "gsap";
+
+    const tl = gsap.timeline();
+
+    tl.from(".hero-bg-element", {
+        opacity: 0,
+        duration: 1.5,
+        stagger: 0.2,
+        ease: "power2.out",
+    })
+        .from(
+            ".hero-text-item",
+            {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "back.out(1.7)",
+            },
+            "-=1",
+        )
+        .from(
+            ".hero-image",
+            {
+                x: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out",
+            },
+            "-=0.8",
+        );
+</script>
