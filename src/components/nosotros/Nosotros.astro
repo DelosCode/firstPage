@@ -1,0 +1,139 @@
+---
+// import "./nosotros.css"; // Removed
+---
+
+<section class="py-20 bg-slate-950 relative" id="nosotros">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+            <!-- Text Content -->
+            <div class="space-y-8 nosotros-text">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Sobre Nosotros
+                    </h2>
+                    <p class="text-slate-300 text-lg leading-relaxed">
+                        Somos un grupo de estudiantes de la Universidad Nacional
+                        de José Clemente Paz (UNPAZ) dedicados a aprender, crear
+                        y colaborar en proyectos tecnológicos.
+                    </p>
+                    <p class="text-slate-300 text-lg leading-relaxed mt-4">
+                        Nuestro objetivo actual es compartir trabajos prácticos
+                        y proyectos académicos mientras nos preparamos para, en
+                        el futuro, desarrollar herramientas digitales útiles
+                        para la comunidad regional.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-slate-900/50 p-6 rounded-xl border-l-4 border-teal-500"
+                >
+                    <p class="text-xl font-light text-white italic">
+                        <span class="text-teal-400 font-bold"
+                            >Explorando ideas</span
+                        >, estudiando soluciones.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="space-y-6">
+                <!-- Mission Card -->
+                <div
+                    class="bg-slate-900 p-8 rounded-2xl border border-white/5 hover:border-teal-500/30 transition-all hover:shadow-lg hover:shadow-teal-900/10 group nosotros-card opacity-0 translate-x-10"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="p-3 bg-teal-500/10 rounded-lg group-hover:bg-teal-500/20 transition-colors"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 text-teal-400"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">
+                            Nuestra Misión
+                        </h3>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        Convertir DelosCode en un espacio que brinde servicios a
+                        la comunidad, desde páginas web personalizadas hasta
+                        sistemas simples para negocios locales.
+                    </p>
+                </div>
+
+                <!-- Values Card -->
+                <div
+                    class="bg-slate-900 p-8 rounded-2xl border border-white/5 hover:border-teal-500/30 transition-all hover:shadow-lg hover:shadow-teal-900/10 group nosotros-card opacity-0 translate-x-10"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="p-3 bg-teal-500/10 rounded-lg group-hover:bg-teal-500/20 transition-colors"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 text-teal-400"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">
+                            Nuestros Valores
+                        </h3>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        Colaboración, aprendizaje continuo y compromiso con
+                        nuestra comunidad. Creemos que el futuro es colaborativo
+                        y juntos podemos construir soluciones reales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".nosotros-text", {
+        scrollTrigger: {
+            trigger: "#nosotros",
+            start: "top 75%",
+        },
+        x: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+    });
+
+    gsap.to(".nosotros-card", {
+        scrollTrigger: {
+            trigger: "#nosotros",
+            start: "top 75%",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.3,
+        ease: "power2.out",
+    });
+</script>

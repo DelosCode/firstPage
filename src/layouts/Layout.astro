@@ -1,34 +1,37 @@
 ---
+<<<<<<< HEAD
 import '../styles/tailwind.css';
 import Nav from '../components/nav/Nav.astro';
 import Footer from '../components/footer/Footer.astro';
+=======
+import Nav from "../components/nav/Nav.astro";
+import Footer from "../components/footer/Footer.astro";
+import "../styles/tailwind.css";
+>>>>>>> 8560f4a (refactoring - cambiando diseño de la pagina)
 ---
+
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+			rel="stylesheet"
+		/>
 		<title>DelosCode</title>
 	</head>
-	<body>
-		<main>
-			<Nav></Nav>
+	<body
+		class="bg-slate-950 text-slate-100 font-['Outfit',sans-serif] min-h-screen flex flex-col overflow-x-hidden"
+	>
+		<Nav />
+		<main class="flex-grow w-full pt-20">
+			<!-- Added pt-20 to account for fixed header -->
 			<slot />
 		</main>
-		<Footer></Footer>
+		<Footer />
 	</body>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 </html>
-
-<style>
-	main {
-		margin: 0;
-		padding: 0 0.9em;
-		width: 100%;
-		height: 100%;
-	}
-	html{
-		background: #BFBFBF;
-	}
-</style>

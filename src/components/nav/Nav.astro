@@ -1,17 +1,149 @@
 ---
-import './nav.css';
+
 ---
 
-<nav class="nav__container">
-    <div class="nav__logoname">
-        <a class="nav__logoname--title" href="#">DELOSCODE</a>
+<nav
+    ---
+    ---
+    <nav
+    class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10 opacity-0"
+    id="navbar"
+>
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="nav__logoname">
+            <a
+                class="text-2xl font-bold text-teal-400 hover:text-teal-300 transition-colors tracking-tight scroll-link"
+                href="#hero">DELOSCODE</a
+            >
+        </div>
+
+        <!-- Desktop Menu -->
+        <ul
+            class="hidden md:flex space-x-8 bg-slate-900/50 px-6 py-2 rounded-full border border-white/5"
+        >
+            <li>
+                <a
+                    class="nav-link text-slate-300 hover:text-teal-400 transition-colors text-sm font-medium scroll-link"
+                    href="#hero">Inicio</a
+                >
+            </li>
+            <li>
+                <a
+                    class="nav-link text-slate-300 hover:text-teal-400 transition-colors text-sm font-medium scroll-link"
+                    href="#contribuidores">Contribuidores</a
+                >
+            </li>
+            <li>
+                <a
+                    class="nav-link text-slate-300 hover:text-teal-400 transition-colors text-sm font-medium scroll-link"
+                    href="#nosotros">Sobre nosotros</a
+                >
+            </li>
+        </ul>
+
+        <!-- Mobile Menu Button -->
+        <button
+            id="mobile-menu-btn"
+            class="md:hidden text-slate-300 hover:text-white focus:outline-none"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
     </div>
-    <ul class="nav__sections">
-        <li class="nav__sections__item">
-            <a class="nav__sections__item__a nav__sections__item__a--inicio" href="#">Inicio</a></li>
-        <li class="nav__sections__item">
-            <a class="nav__sections__item__a" href="#">Contribuidores</a></li>
-        <li class="nav__sections__item">
-            <a class="nav__sections__item__a" href="#">Sobre nosotros</a></li>
-    </ul>
+
+    <!-- Mobile Menu -->
+    <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-slate-950 border-b border-white/10"
+    >
+        <ul class="flex flex-col p-4 space-y-4">
+            <li>
+                <a
+                    class="block text-slate-300 hover:text-teal-400 transition-colors scroll-link"
+                    href="#hero">Inicio</a
+                >
+            </li>
+            <li>
+                <a
+                    class="block text-slate-300 hover:text-teal-400 transition-colors scroll-link"
+                    href="#contribuidores">Contribuidores</a
+                >
+            </li>
+            <li>
+                <a
+                    class="block text-slate-300 hover:text-teal-400 transition-colors scroll-link"
+                    href="#nosotros">Sobre nosotros</a
+                >
+            </li>
+        </ul>
+    </div>
 </nav>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+    gsap.registerPlugin(ScrollToPlugin);
+
+    // Navbar Animation
+    gsap.to("#navbar", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.5,
+    });
+
+    // Mobile Menu Logic
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const links = document.querySelectorAll(".scroll-link");
+
+    if (btn && menu) {
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+            if (!menu.classList.contains("hidden")) {
+                gsap.from(menu.children, {
+                    y: -20,
+                    opacity: 0,
+                    duration: 0.3,
+                    stagger: 0.1,
+                });
+            }
+        });
+    }
+
+    // Smooth Scroll Logic
+    links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href");
+            if (targetId) {
+                // Close mobile menu if open
+                if (menu && !menu.classList.contains("hidden")) {
+                    menu.classList.add("hidden");
+                }
+
+                gsap.to(window, {
+                    duration: 0.6,
+                    scrollTo: {
+                        y: targetId,
+                        offsetY: 70, // Adjust for fixed navbar height
+                    },
+                    ease: "back.out(1.2)", // Bounce effect
+                });
+            }
+        });
+    });
+</script>
